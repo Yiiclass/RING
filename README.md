@@ -29,20 +29,20 @@ The datasets used for evaluation are [ICVL](https://icvl.cs.bgu.ac.il/hyperspect
 ```
 dataset
 +-- 'train'
-|   +-- ICVL_1.png
-|   +-- ICVL_2.png
-|   +-- ICVL_3.png
-|   +-- ICVL_4.png
-|   +-- ICVL_5.png
-|   +-- ICVL_6.png
+|   +-- train_ICVL_1.png
+|   +-- train_ICVL_2.png
+|   +-- train_ICVL_3.png
+|   +-- train_ICVL_4.png
+|   +-- train_ICVL_5.png
+|   +-- train_ICVL_6.png
 |   +-- ...
 +-- 'test'
-|   +-- ICVL_1.png
-|   +-- ICVL_2.png
-|   +-- ICVL_3.png
-|   +-- ICVL_4.png
-|   +-- ICVL_5.png
-|   +-- ICVL_6.png
+|   +-- test_ICVL_1.png
+|   +-- test_ICVL_2.png
+|   +-- test_ICVL_3.png
+|   +-- test_ICVL_4.png
+|   +-- test_ICVL_5.png
+|   +-- test_ICVL_6.png
 |   +-- ...
 ```
 
