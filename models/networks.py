@@ -151,22 +151,6 @@ def init_net(net, init_type='normal', init_gain=0.02, gpu_ids=[]):
         net.to(gpu_ids[0])
         net = torch.nn.DataParallel(net, gpu_ids)  # multi-GPUs
     init_weights(net, init_type, init_gain=init_gain)
-    # x = torch.zeros(1,14)
-    # x[0,1]=1.4
-    # x[0,2]=1
-    # x[0,0]=2.5
-    # #x = np.array([0.21955654, 0.29454545, 0.25281596, 0.08201774, 0.03771619,0.02170732, 0.0127051 , 0.01405765, 0.00977827, 0.00891353,0.00891353, 0.00953437, 0.00993348, 0.00953437])#13s
-    # #x = np.array([0.24652361, 0.32214592, 0.28686695, 0.05725322, 0.02214592,0.01090129, 0.0072103 , 0.00798283, 0.00660944, 0.00583691,0.00583691, 0.00566524, 0.00532189, 0.00497854])#15s
-    # #x = np.array([0.12352941, 0.70588235, 0.17058824,0., 0.,0., 0., 0., 0., 0.,0., 0., 0., 0.])#eo2113c
-    
-    # #x = torch.unsqueeze(torch.from_numpy(x).float(),dim=0)
-    # #params = nn.Parameter(data=x,requires_grad=False)
-    # params = nn.Parameter(data=x,requires_grad=False)
-    # try:
-    #     net.module.model.model[0].select.weight = params
-    #     net.module.model.model[0].select.cuda()
-    # except:
-    #     None
     return net
 
 
@@ -464,74 +448,6 @@ class UnetSkipConnectionBlock(nn.Module):
             nn.ReLU(),
             nn.Linear(256,3),
         )
-    #--------------------------------------------------------------------------------------------------------------------------------
-    # def forward(self, x):
-    #     if self.outermost:
-    #         return self.model(x)#,res
-    #     else:   # add skip connections
-    #         out = torch.cat([x, self.model(x)], 1)
-            
-            
-    #         if out.shape == torch.Size([1, 128, 128, 128]):
-    #             # 提取第十通道的特征
-    #             channel_10 = out.cpu()[0, 8, :, :]
-
-    #             # 可视化并保存第十通道为灰度图
-    #             plt.imshow(channel_10.detach().numpy(), cmap='gray')
-    #             plt.axis('off')
-    #             plt.savefig('/data5/gaoyunyi/RING/visualization_feature/channel_9_grayscale.png', bbox_inches='tight')
-    #             plt.close()
-
-    #             # 可视化并保存第十通道为伪彩色图
-    #             plt.imshow(channel_10.detach().numpy(), cmap='jet')
-    #             plt.axis('off')
-    #             plt.savefig('/data5/gaoyunyi/RING/visualization_feature/channel_9_pseudocolor.png', bbox_inches='tight')
-    #             plt.close()
-
-
-            
-    #         # if out.shape == torch.Size([1, 128, 128, 128]):
-    #         #     ## 将 128 个通道分为 4 组，每组 32 个通道
-    #         #     groups = out.cpu().split(32, dim=1)  # 这将创建一个包含 4 个 (1, 32, 128, 128) 形状的元组
-
-    #         #     # 计算并保存每组通道的均值图像
-    #         #     for group_idx, group in enumerate(groups):
-    #         #         # 计算均值图像
-    #         #         mean_image = group.mean(dim=1, keepdim=True)
-
-    #         #         # 可视化均值图像
-    #         #         plt.imshow(mean_image[0, 0].detach().numpy(), cmap='gray')
-    #         #         plt.axis('off')
-    #         #         plt.title(f'Group {group_idx + 1} Mean Image')
-
-    #         #         # 保存均值图像
-    #         #         plt.savefig(f'/data5/gaoyunyi/RING/visualization_feature/mean_group_{group_idx + 1}.png', bbox_inches='tight')
-    #         #         plt.close()  # 关闭图像，防止在屏幕上显示
-                    
-                    
-                    
-    #         # if out.shape == torch.Size([1, 128, 128, 128]):
-    #         #     # 将 128 个通道分为 2 组，每组 64 个通道
-    #         #     groups = out.cpu().split(64, dim=1)  # 这将创建一个包含 2 个 (1, 64, 128, 128) 形状的元组
-
-    #         #     # 计算并保存每组通道的均值图像
-    #         #     for group_idx, group in enumerate(groups):
-    #         #         # 计算均值图像
-    #         #         mean_image = group.mean(dim=1, keepdim=True)
-
-    #         #         # 可视化均值图像
-    #         #         plt.imshow(mean_image[0, 0].detach().numpy(), cmap='gray')
-    #         #         plt.axis('off')
-    #         #         plt.title(f'Group {group_idx + 1} Mean Image')
-
-    #         #         # 保存均值图像
-    #         #         plt.savefig(f'/data5/gaoyunyi/RING/visualization_feature/mean_64_group_{group_idx + 1}.png', bbox_inches='tight')
-    #         #         plt.close()  # 关闭图像，防止在屏幕上显示
-            
-            
-    #             exit()
-    #         return out
-
     # #--------------------------------------------------------------------------------------------------------------------------------
     def forward(self, x):
         if self.outermost:
