@@ -45,6 +45,10 @@ dataset
 |   +-- test_ICVL_6.png
 |   +-- ...
 ```
+For example:
+![ICVL_1](https://github.com/Yiiclass/RING/assets/69071622/2fd59127-4871-4285-8a4b-84aab644b836)
+
+
 
 ## Usage
 + Create conda environment and download our repository
