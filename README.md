@@ -1,4 +1,7 @@
 # Grayscale-Assisted RGB Image Conversion from Near-Infrared Images
+We provide the Pytorch implementation of Grayscale-Assisted RGB Image Conversion from Near-Infrared Images.
+
+## Abstract
 Recent methods aim to recover the corresponding RGB image directly from the NIR image using Convolutional Neural Networks. 
 However, these methods struggle with accurately recovering both luminance and chrominance information and the inherent deficiencies in NIR image details. 
 In this paper, we propose grayscale-assisted RGB image restoration from NIR images to recover luminance and chrominance information in two stages. 
@@ -91,3 +94,28 @@ CUDA_VISIBLE_DEVICES=0  python test.py \
 
 
 | Method                                | PSNR ↑     | SSIM ↑    | RMSE ↓   | Delta-E ↓ | FLOPs (G) ↓ | Parameters (M) ↓ | Inference time (s) ↓ |
+|---------------------------------------|------------|-----------|----------|-----------|-------------|------------------|-----------------------|
+| Retinex-Net                           | 8.99       | 0.23      | 10.35    | 13.06     | 587.47      | 0.55             | 0.142                 |
+| LIME                                  | 12.26      | 0.46      | 10.55    | 11.00     | -           | -                | 2.997                 |
+| DUA                                   | 11.86      | 0.39      | 10.52    | 11.95     | -           | -                | 6.042                 |
+| MBLLE                                 | 12.26      | 0.46      | 10.55    | 11.00     | 301.12      | **0.45**         | 0.640                 |
+| Ideepcolor                            | 12.52      | 0.52      | 10.55    | 10.49     | 146.32      | 34.19            | 0.081                 |
+| CIC                                   | 12.96      | 0.52      | 10.54    | 10.54     | 48.29       | 32.24            | 0.070                 |
+| Jointcolor                            | 16.95      | 0.55      | 9.85     | 14.97     | **8.60**    | 42.3             | 0.032                 |
+| CT2                                   | 18.42      | 0.71      | 9.67     | 12.73     | 1784.47     | 462.98           | 0.175                 |
+| CUT                                   | 20.50      | 0.62      | 8.80     | 10.03     | 70.64       | 14.70            | **0.011**             |
+| UNIT                                  | 21.58      | 0.70      | 9.05     | 11.14     | 142.29      | 38.82            | 0.355                 |
+| CycleGAN                              | 22.31      | 0.76      | 8.42     | 8.18      | 28.29       | 120.12           | 0.013                 |
+| BBDM                                  | 24.00      | 0.84      | 8.22     | 7.92      | 1981.09     | 237.09           | 32.262                |
+| NIRcolor                              | 16.37      | 0.69      | 9.90     | 26.62     | 206.33      | 53.62            | 0.007                 |
+| RVM                                   | 24.21      | 0.80      | 8.01     | 7.33      | 21.36       | 57.20            | 0.037                 |
+| TLM                                   | 24.53      | 0.79      | 7.84     | 7.28      | 21.36       | 57.20            | 0.031                 |
+| Ours                                  | **25.26**  | **0.85**  | **7.83** | **6.89**  | 19.84       | 38.57            | 0.032                 |
+
+
+
+## Citation
+
+
+## contact
+If you have any problems, please feel free to contact me at yiiclass@qq.com
