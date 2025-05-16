@@ -119,16 +119,18 @@ CUDA_VISIBLE_DEVICES=0  python test.py \
 If you find this work useful for your research, please cite:
 
 ```
-@ARTICLE{10979784,
-  author={Gao, Yunyi and Liu, Qiankun and Gu, Lin and Fu, Ying},
-  journal={Tsinghua Science and Technology}, 
+@article{gao2025grayscale,
   title={Grayscale-Assisted RGB Image Conversion from Near-Infrared Images}, 
-  year={2025},
+  author={Gao, Yunyi and Liu, Qiankun and Gu, Lin and Fu, Ying},
+  journal={Tsinghua Science and Technology},
   volume={30},
   number={5},
-  pages={2215-2226},
-  keywords={Codes;Frequency-domain analysis;Surveillance;Focusing;Transforms;Gray-scale;Image restoration;Safety;Convolutional neural networks;Near-InfraRed (NIR) to RGB conversion;grayscale domain prior;image colorization},
-  doi={10.26599/TST.2024.9010115}}
+  pages={2215--2226},
+  year={2025},
+  publisher={TUP},
+  doi={10.26599/TST.2024.9010115}
+}
+
 ```
 
 ## contact
